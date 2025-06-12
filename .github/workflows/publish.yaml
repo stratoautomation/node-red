@@ -2,7 +2,7 @@ name: Build and Publish to GHCR
 
 on:
   push:
-    branches: [ "OCN-1362-Migrate-to-Node-RED-4.x" ]
+    branches: [ "main" ]
 
 jobs:
   build-and-push:
@@ -33,6 +33,6 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}:test-${{ steps.vars.outputs.NODERED_VERSION }}
+            ghcr.io/${{ github.repository }}:${{ steps.vars.outputs.NODERED_VERSION }}
           build-args: |
             NODERED_VERSION=${{ steps.vars.outputs.NODERED_VERSION }}

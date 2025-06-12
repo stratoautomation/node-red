@@ -1,5 +1,7 @@
+ARG NODERED_VERSION
+
 # Use the official Node-RED image as the base
-FROM nodered/node-red:3.1.6-18
+FROM nodered/node-red:${NODERED_VERSION}
 
 # Switch to root to install packages
 USER root
